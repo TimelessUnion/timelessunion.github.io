@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Wedding invitation — powered by wedding-config.js" />
+    <title>Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Cinzel:wght@400;500;600&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Config must load before script.js -->
+    <script src="wedding-config.js"></script>
+  </head>
+  <body>
+
+    <!-- ░░ HERO ░░ -->
+    <header class="hero" id="top">
+      <div class="petal-layer" aria-hidden="true"></div>
+      <div class="hero-slider" id="heroSlider" aria-hidden="true"></div>
+      <div class="hero-overlay"></div>
+
+      <nav class="top-nav">
+        <a href="#top" class="brand" id="navBrand">PB ✦ DB</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <ul id="mobile-nav" class="nav-links">
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#album">Album</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero-content reveal">
+        <p class="hero-intro" id="heroTagline"></p>
+        <div class="ornament">✦ ❧ ✦</div>
+        <h1 id="heroNames"></h1>
+        <div class="ornament-thin">── ✦ ──</div>
+        <p class="hero-date" id="heroDate"></p>
+        <div class="countdown-strip" id="countdown"></div>
+        <a class="hero-cta" href="#events">Explore Celebration</a>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- ░░ STORY ░░ -->
+      <section class="section story" id="story">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Our Story</p>
+          <h2>A journey written in grace, laughter, and destiny.</h2>
+        </div>
+        <div class="story-grid" id="storyGrid"></div>
+      </section>
+
+      <!-- ░░ EVENTS ░░ -->
+      <section class="section events" id="events">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Wedding Festivities</p>
+          <h2>Curated moments of joy and tradition.</h2>
+        </div>
+        <div class="event-grid" id="eventGrid"></div>
+      </section>
+
+      <!-- ░░ LOCATION ░░ -->
+      <section class="section location" id="location">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Location</p>
+          <h2 id="venueHeading"></h2>
+        </div>
+        <div class="location-wrap reveal">
+          <div class="location-card">
+            <p class="venue-label">Wedding Venue</p>
+            <h3 id="venueName"></h3>
+            <p id="venueAddress"></p>
+            <a class="map-btn" id="venueMapBtn" href="#" target="_blank" rel="noopener noreferrer">
+              <span>Open Directions</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="map-frame">
+            <iframe id="venueEmbed" title="Wedding Venue Map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src=""></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- ░░ ALBUM ░░ -->
+      <section class="section album" id="album">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Memory Album</p>
+          <h2>A gallery of cherished chapters.</h2>
+        </div>
+
+        <div class="album-tabs reveal" role="tablist" aria-label="Album Categories" id="albumTabs"></div>
+
+        <div class="album-viewer reveal" tabindex="0" aria-live="polite" id="albumViewer">
+          <button class="album-nav prev" aria-label="Previous image">‹</button>
+          <div class="album-stage">
+            <figure class="album-photo" id="albumPhoto">
+              <img id="albumImg" src="" alt="" loading="lazy" />
+              <figcaption id="albumCaption"></figcaption>
+            </figure>
+          </div>
+          <button class="album-nav next" aria-label="Next image">›</button>
+        </div>
+
+        <div class="thumb-row reveal" id="thumbRow" aria-hidden="true"></div>
+      </section>
+
+      <!-- ░░ CONTACT ░░ -->
+      <section class="section contact" id="contact">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>We look forward to celebrating with you.</h2>
+        </div>
+        <div class="contact-grid" id="contactGrid"></div>
+      </section>
+
+    </main>
+
+    <footer class="footer" id="siteFooter">
+      <div class="footer-ornament">✦ ❧ ✦</div>
+      <p class="footer-sub">With love and gratitude</p>
+      <h2 id="footerNames"></h2>
+      <p id="footerDate"></p>
+      <small id="footerTagline"></small>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
